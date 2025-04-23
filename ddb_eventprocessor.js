@@ -30,7 +30,7 @@ exports.handler = function(event, context) {
   * This assumes the batch size configured in the the event source mapping
   * is set to a maximum of 25 records. Depending on the characteristics of
   * your system it may make sense to consume larger batches from the stream
-  * and manage the batch sizes sent to DynamoDB within the funtion.
+  * and manage the batch sizes sent to DynamoDB within the function.
   */
   event.Records.forEach(function(record) {
     payload = new Buffer(record.kinesis.data, 'base64').toString('ascii');
